@@ -1,0 +1,13 @@
+<h1>Componente Lista</h1>
+
+<h3 *ngIf="superheroeBorrado == '' else ningunHeroeBorrado">No ha borrado nada</h3>
+
+<ng-template #ningunHeroeBorrado>
+    <h3>Se ha borrado {{superheroeBorrado}}</h3>
+</ng-template>
+
+<ul class="list-group mt-2">
+    <li *ngFor="let superheroe of superheroes" class="list-group-item">{{superheroe}}</li>
+</ul>
+
+<input type="button" (click)="borrarSuperheroe()" *ngIf="superheroes.length > 0" value="Borrar último héroe" class="btn btn-danger">
